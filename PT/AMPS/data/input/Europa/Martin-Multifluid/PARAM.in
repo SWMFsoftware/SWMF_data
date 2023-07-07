@@ -1,0 +1,305 @@
+!- PARAM.in:  Example input file for EUROPA Single Fluid MHD --
+
+#ECHO
+T                       DoEcho
+
+#INCLUDE
+GM/restartIN/restart.H
+
+#TIMEACCURATE
+F						DoTimeAccurate
+
+#ROTATION
+F                       UseRotation
+
+#DIPOLE
+92.0E-9                 abs Magn. Field [T]
+
+#MAGNETICAXIS
+T                       IsMagAxisPrimary (rest of parameters read if true)
+90.0                    MagAxisTheta [degree] entry in GSE, tilt from z-axis
+287.0                    MagAxisPhi   [degree] tilt from x-axis clockwise
+
+#TEST
+CON_axes::init_axes CON_axes::set_axes 
+
+#PROGRESS
+100                     dnProgress1 (frequency of short reports to STDOUT)
+1000                    dnProgress2 (frequency of summaries to STDOUT)
+
+#CHECKSTOPFILE
+F
+
+#SAVERESTART
+T
+20000
+-1
+
+#CPUTIMEMAX
+85000.0
+
+#COORDSYSTEM
+GSE                      TypeCoordSystem (Beta version; GM/BATSRUS is in GSM!)
+
+#SOLARWIND
+20.0                     SW_rho_dim [n/cc]
+1.5e6                    SW_T_dim [K] | PLS data
+-100.                    SW_Ux_dim [km/s] | corotation speed
+0.0                      SW_Uy_dim [km/s]
+0.0                      SW_Uz_dim [km/s]
+-55.                     SW_Bx_dim [nT]
+173.                     SW_By_dim [nT]
+-412.                    SW_Bz_dim [nT]
+
+#PLASMA
+16.0                     IonMass O [amu]
+32.0                     IonMass O2 [amu]
+1.0                      IonCharge O [e]
+1.0                      IonCharge O2 [e]
+1.0                      ElectronTemperatureRatio
+
+#BODY
+T                         body1
+1.0                       rBody
+0.0                       rCurrents
+10.0                      BodyRhoDim (1/ccm)
+600.0                     BodyTDim (K) temperature for fixed BC for P_BLK
+10.0                      BodyRhoDim (1/ccm)
+600.0                     BodyTDim (K) temperature for fixed BC for P_BLK
+
+#GRAVITY
+T                       UseGravity
+0                       iDirGravity
+
+HALLRESISTIVITY
+T                       UseHallResist (rest of parameters read only if true)
+1.0                     HallFactor
+1.0                     HallCmaxFactor
+
+HALLREGION
+all
+
+HALLINNERREGION
+1.01
+0.04
+
+__________________________________________
+Electron Heat Conduction - Start
+__________________________________________
+
+HEATCONDUCTION
+T                       UseHeatConduction
+user                    TypeHeatConduction
+
+SEMIIMPLICIT
+T                       UseSemiImplicit
+parcond                 TypeSemiImplicit
+
+WEAKFIELDCONDUCTION
+T                       DoWeakFieldConduction
+0.001                   BmodifySi
+0.001                   DeltaBmodifySi
+
+HEATFLUXLIMITER
+T                       UseHeatFluxLimiter
+0.01                    HeatFluxLimiter
+
+KRYLOV
+gmres                   TypeKrylov
+nul                     TypeInitKrylov
+1.0e-5                  ErrorMaxKrylov
+10                      MaxMatvecKrylov
+
+PRECONDITIONER
+left                    TypePrecondSide (left, symmetric, right)
+bilu                    TypePrecond (MBILU)
+__________________________________________
+Electron Heat Conduction - End
+__________________________________________
+
+#UNIFORMAXIS
+T                       UseUniformAxis
+
+#FIXAXIS
+F                       UsePoleDiffusion
+T                       DoFixAxis
+100.0                     rFixAxis
+1.2                     r2FixAxis
+
+#TESTXYZ
+2.0
+0.0
+0.0
+
+#OUTERBOUNDARY
+outflow			TypeBcEast
+inflow			TypeBcWest
+float			TypeBcSouth
+float			TypeBcNorth
+float			TypeBcBottom
+float			TypeBcTop
+
+#EXTRABOUNDARY
+T                       UseExtraBoundary
+user                    TypeExtraBoundary
+
+#FACEBOUNDARY
+-1                      MinFaceBoundary
+0                       MaxFaceBoundary
+
+#TIMESTEPPING
+1                        nSTAGE
+0.5                      cfl
+
+#SCHEME
+1                         nOrder
+Rusanov                   TypeFlux | only for nOrder=2
+minmod                    TypeLimiter
+
+#POINTIMPLICIT
+T                       UsePointImplicit
+1.0                     BetaPointImpl
+F                       IsAsymetric
+T                       DoNormalizeCell 
+
+#RESTARTOUTFILE
+one
+
+#NONCONSERVATIVE
+T						UseNonConservative
+
+#CONSERVATIVECRITERIA
+0
+
+#USERFLAGS
+T                       UseUserInnerBcs
+T                       UseUserSource
+F                       UseUserPerturbation
+F                       UseUserOuterBcs
+T                       UseUserICs
+F                       UseUserSpecifyRefinement
+T                       UseUserLogFiles
+T                       UseUserWritePlot
+F                       UseUserAMR
+F                       UseUserEchoInput
+F                       UseUserB0
+T                       UseUserInitSession
+T                       UseUserUpdateStates
+
+#SAVEPLOTSAMR
+F                       save_plots_amr to save plots before each AMR
+
+#SAVELOGFILE
+T                       DoSaveLogfile, rest of parameters read if true
+VAR step date time      StringLog
+100                     DnSaveLogfile
+-1.                     DtSaveLogfile [sec]
+mlop recop mlo2p reco2p rho Ux Uy Uz Bx By Bz p rhopnt Uxpnt Uypnt Uzpnt ppnt Pmin Pmax
+
+#SAVEINITIAL
+F			DoSaveInitial
+
+#SAVEPLOT
+4                       nplotfiles
+z=0 MHD tec             plot_string
+1000                    DnSavePlot
+-1.                     DtSavePlot
+y=0 MHD tec             plot_string
+1000                    DnSavePlot
+-1.                     DtSavePlot
+3d MHD tec              plot_string
+100000                  DnSavePlot
+-1.                     DtSavePlot
+z=0 VAR tec             plot_string
+1000                    DnSavePlot
+-1.                     DtSavePlot
+mlop ionop eionop recop mlo2p iono2p eiono2p reco2p nn1
+rBody
+
+INNERBOUNDARY
+reflect			InnerBCType
+
+#USERINPUTBEGIN --------------------
+
+#EUROPA
+5.0E8			Neutral surface density for the exponential falling-off component [1/cm^3]
+20			Neutral scale height for the exponential falling-off component  [km]
+5.0E4			Neutral surface density for the power-law falling-off component [1/cm^3]
+500			Neutral scale height of population 2 [km]; Kliore (1997)
+1.			Max fraction in cosine relative to uniform distr. [0..infinity]
+1.0E-7		    	Ionization frequency (1/s) Op from O2 [1/s]
+1.0E-6		    	Ionization frequency (1/s) O2p from O2 [1/s]
+50.0			Minimum ion temperature (enforced in user_update_states)
+
+#SUNPOS
+T                       Photoionization in Europa's shadow?
+7.244727e+08            x-component of the Sun's position in GSE coordinates
+2.574552e+08            y-component of the Sun's position in GSE coordinates
+-1.457990e+07           z-component of the Sun's position in GSE coordinates
+
+#USEFIXEDBOUNDARY
+F                       UseFixedBoundary
+10.0                    Op Upstream BodyNDim (1/ccm)
+600.0                   Op Upstream BodyTDim (K) temperature for fixed BC for P_BLK
+10000.0                 O2p Upstream BodyNDim (1/ccm)
+1000.0                  O2p Upstream BodyTDim (K) temperature for fixed BC for P_BLK
+10.0                    Op Downstream BodyNDim (1/ccm)
+600.0                   Op Downstream BodyTDim (K) temperature for fixed BC for P_BLK
+10.0                    O2p Downstream BodyNDim (1/ccm)
+600.0                   O2p Downstream BodyTDim (K) temperature for fixed BC for P_BLK
+
+#USERINPUTEND ----------------------
+
+#STOP
+0
+-1
+
+#RUN
+
+#OUTERBOUNDARY
+outflow			TypeBcEast
+user			TypeBcWest
+float			TypeBcSouth
+float			TypeBcNorth
+float			TypeBcBottom
+float			TypeBcTop
+
+__________________________________________
+Electron Heat Conduction - Start
+__________________________________________
+
+#HEATCONDUCTION
+T                       UseHeatConduction
+user                    TypeHeatConduction
+
+#SEMIIMPLICIT
+T                       UseSemiImplicit
+parcond                 TypeSemiImplicit
+
+WEAKFIELDCONDUCTION
+T                       DoWeakFieldConduction
+0.001                   BmodifySi
+0.001                   DeltaBmodifySi
+
+#HEATFLUXLIMITER
+T                       UseHeatFluxLimiter
+0.05                    HeatFluxLimiter
+
+#KRYLOV
+gmres                   TypeKrylov
+nul                     TypeInitKrylov
+1.0e-5                  ErrorMaxKrylov
+10                      MaxMatvecKrylov
+
+#PRECONDITIONER
+left                    TypePrecondSide (left, symmetric, right)
+bilu                    TypePrecond (MBILU)
+__________________________________________
+Electron Heat Conduction - End
+__________________________________________
+
+#STOP
+10000
+-1
+
+#END

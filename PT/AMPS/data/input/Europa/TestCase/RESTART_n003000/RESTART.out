@@ -1,0 +1,27 @@
+#DESCRIPTION
+Please describe me!
+
+#PLANET
+EUROPA                        NamePlanet
+
+#STARTTIME
+    2000                     iYear      
+       1                     iMonth     
+       1                     iDay       
+       0                     iHour      
+       0                     iMinute    
+       0                     iSecond    
+ 0.000000000000              FracSecond 
+
+#NSTEP
+    3000                     nStep      
+
+#TIMESIMULATION
+ 0.00000000E+00              tSimulation
+
+#VERSION
+ 2.30                        VersionSwmf
+
+#PRECISION
+8                            nByteReal  
+

@@ -1,0 +1,148 @@
+
+#DEBUG
+0		debug level
+0		cpu to watch
+60.0		dt between normal code output to stdout
+F		usebarriers - forces the code to stop and wait more often
+
+#RESTART
+F
+
+#GRID
+1		lons
+1		lats
+20.0
+20.0
+0.0
+0.0
+
+#DIFFUSION
+T
+300.0		Eddy Diffusion Coefficient (Should be less for 1-D runs)
+0.0050		Total Eddy Diffusion applied at alts below this pressures level
+0.0005		No Eddy Diffusion at altitudes above this pressure level
+
+#PHOTOELECTRON
+0.00       Efficiency of photoelectron heating
+
+#NEUTRALHEATING
+0.05       Efficiency of photoelectron heating
+
+#THERMALCONDUCTION
+3.8e-4     Thermal conductivity (o2)
+5.8e-4     Thermal conductivity (o)
+0.69       Thermal conductivity (^s)
+
+#CPUTIMEMAX
+86000.0
+
+#TIMESTART
+2002
+03
+18
+00
+00
+00
+
+#TIMEEND
+2002
+03
+18
+00
+05
+00
+
+#CFL
+0.80
+
+#LIMITER
+mc
+2.0
+
+#STATISTICALMODELSONLY
+F
+1800.0
+
+#LOGFILE
+10.0
+
+#SAVEPLOTS
+7200.0
+1
+3DALL
+900.0
+
+#ELECTRODYNAMICS
+60.0
+60.0
+
+#ALTITUDE
+100.0
+600.0
+T
+
+#INITIAL
+T		MSIS
+T		IRI
+200.0
+1000.0
+5.0e17
+7.0e18
+3.0e19
+
+#APEX
+F
+
+#AMIEFILES
+none
+none
+
+#F107
+150.0
+150.0
+
+#HPI
+1.0
+
+#KP
+1.0
+
+#SOLARWIND
+0.0
+0.0
+-2.0
+400.0
+
+#USEIMPROVEDIONADVECTION
+T
+T
+2.0
+
+#AUSMSOLVER
+T
+
+#THERMO
+T		 UseSolarHeating
+T		 UseJouleHeating
+T		 UseAuroralHeating
+T		 UseNOCooling
+T		 UseOCooling
+T		 UseConduction
+T		 UseTurbulentConduction
+F		 UseUpdatedTurbulentConduction
+1.0		 EddyScalingFactor
+
+#FORCING
+T		UsePressureGradient
+T		UseIonDrag
+T		UseNeutralDrag
+T		UseViscosity
+T		UseCoriolis
+T		UseGravity
+
+#CHEMISTRY
+T		UseIonChemistry
+T		UseIonAdvection
+T		UseNeutralChemistry
+
+#END

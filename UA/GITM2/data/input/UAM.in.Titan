@@ -1,0 +1,267 @@
+
+#DEBUG
+0		debug level
+0		cpu to watch
+10.0		dt between normal code output to stdout
+F		usebarriers - forces the code to stop and wait more often
+
+#RESTART
+T
+
+#GRID
+24		lons
+18		lats
+-90.0		minimum latitude to model
+90.0		maximum latitude to model
+0.0		longitude start to model (set to 0.0 for whole Earth)
+0.0             longitude end to model (set to 0.0 for whole Earth)
+
+##GRID
+#1		lons
+#1		lats
+#0.0		minimum latitude to model
+#0.0		maximum latitude to model
+#0.0		longitude start to model (set to 0.0 for whole Earth)
+#0.0             longitude end to model (set to 0.0 for whole Earth)
+
+##GRID
+#24		lons
+#18		lats
+#-90.0		minimum latitude to model
+#90.0		maximum latitude to model
+#0.0		longitude start to model (set to 0.0 for whole Earth)
+#0.0             longitude end to model (set to 0.0 for whole Earth)
+ 
+##GRID
+#12		lons
+#12		lats
+#-90.0		minimum latitude to model
+#90.0		maximum latitude to model
+#0.0		longitude start to model (set to 0.0 for whole Earth)
+#0.0             longitude end to model (set to 0.0 for whole Earth)
+
+#DIFFUSION
+T
+280.0		Eddy Diffusion Coefficient (Should be about 37.5 for 1-D runs)
+0.0010		Total Eddy Diffusion applied at alts below this pressures level
+0.0005		Total Eddy Diffusion applied at alts below this pressures level
+0.0001		No Eddy Diffusion at altitudes above this pressure level
+
+#PHOTOELECTRON
+0.00       Efficiency of photoelectron heating
+
+#NEUTRALHEATING
+0.05       Efficiency of photoelectron heating
+
+#THERMALCONDUCTION
+3.6e-4     Thermal conductivity (o2)
+5.6e-4     Thermal conductivity (o)
+0.69       Thermal conductivity (^s)
+
+#CPUTIMEMAX
+86000.0		Maximum amount of cputime to use before stopping the code
+
+#TIMESTART
+2007		year
+01		month
+01		day
+00		hour
+00		minute
+00		second
+
+#TIMEEND
+2009		year
+01		month
+18		day
+00		hour
+00		minute
+00		second
+
+
+##TIMEEND
+#2008		year
+#01		month
+#17		day
+#00		hour
+#00		minute
+#00		second
+
+#CFL
+0.85		percentage of maximum allowable time-step to take
+
+#LIMITER
+mc		only limiter available
+2.0
+
+#STATISTICALMODELSONLY
+F		if you want to run with msis and iri only (i.e. not GITM)
+1800.0		time step to take if you run with msis and iri
+
+#LOGFILE
+1.0		dt for output to a log file
+
+#SAVEPLOTS
+43200.0		dt for writing restart files
+1		how many output files do you want
+3DALL		second output style
+43200.0		dt for output (1 every 5 min)
+
+#43200.0		dt for writing restart files
+#1		how many output files do you want
+#3DALL		second output style
+#43200.0		dt for output (1 every 5 min)
+
+#ELECTRODYNAMICS
+60.0		how often to update potential
+60.0		how often to update aurora and euv
+
+#ALTITUDE
+500.0		minimum altitude to use
+1600.0		maximum altitude to use (ignored unless the following is F)
+T		use stretched grid
+
+#INITIAL
+T		initialize thermosphere using MSIS
+F		initialize ionosphere using IRI
+175.0		if msis is false, then this is the temperature at the base
+150.0		if msis is false, then this is the temperature at the top
+900.0		if msis is false, then this altitude of the temperature change
+150.0		if msis is false, then this width of the temperature change
+6.1177e19		N2
+8.7133e17		CH4 1.4%
+2.0497e15		Ar  3.30e-05
+1.2000e10		HCN 1.0e-07
+1.2000e10		C2H4 1.0e-07
+7.2960e17		15N2 (2.0/167.7) Ratio
+9.5751e15		13CH4
+6.0000e10		H    1.0e-07
+1.2442e17		H2
+1.2000e10		H2CN
+1.2000e10		N4S
+
+#TIDES
+F		UseMSISFlat
+F		UseMSISTides
+F		UseGSWMTides
+F		UseWACCMTides
+
+#GSWMCOMP
+F		Diurnal Migrating
+F		Diurnal NonMigrating
+F		Semidiurnal Migrating
+F		Semidiurnal NonMigrating
+
+#APEX
+F		Use apex magnetic coordinate system
+
+------------------
+solar irradiance
+
+#F107
+70.0		f10.7
+70.0		f10.7 averaged over 81 days
+
+or
+NGDC_INDICES
+UA/DataIn/f107.txt
+
+or
+#EUV_DATA
+F		Use solar flux data
+fismflux.dat	Filename
+
+------------------
+Hemispheric Power
+#HPI
+0.2		hemispheric power
+
+or
+
+NOAAHPI_INDICES
+power file
+
+#KP
+0.2		kp
+
+----------------------
+IMF / potential
+
+#SOLARWIND
+0.0		IMF Bx
+0.0		IMF By
+-2.0		IMF Bz
+400.0		Solar wind Vx
+
+or
+
+SWPC_INDICES
+imf file
+solar wind file
+
+MHD_INDICES
+imf/solarwind file
+
+#AMIEFILES
+none		northern hemisphere amie file
+none		southern hemisphere amie file
+
+#THERMO
+T		 UseSolarHeating
+F		 UseJouleHeating
+F		 UseAuroralHeating
+F		 UseNOCooling
+F		 UseOCooling
+T		 UseConduction
+F		 UseTurbulentConduction
+F		 UseUpdatedTurbulentConduction
+1.0		 EddyScalingFactor
+
+#FORCING
+T		UsePressureGradient
+F		UseIonDrag
+T		UseNeutralDrag
+T		UseViscosity
+T		UseCoriolis
+T		UseGravity
+
+#IONFORCING
+F               UseExB
+F               UseIonPressureGradient
+F               UseIonGravity
+F               UseNeutralDrag
+F               UseDynamo
+
+#USEIMPROVEDIONADVECTION
+F
+
+#DYNAMO
+F
+45.0
+500
+1.0
+
+#CHEMISTRY
+T		UseIonChemistry
+F		UseIonAdvection
+T		UseNeutralChemistry
+
+#STRETCH
+65.0		! location of minimum grid spacing
+0.0		! Amount of stretch 0 (none) to 1 (lots)
+1.0		! More control of stretch ( > 1 stretch less < 1 stretch more)
+
+#GLOW
+F		Whether to couple to GLOW
+3600.0		How often to run glow
+
+#EDDYVELOCITY
+F		UseBoquehoAndBlelly
+
+#IMPROVED_GRAVITY
+F		UseImprovedGravity
+1.3455e+23	Mass of planet (kg) 
+  27.22e-06	J2 (2nd harmonic) correction to gravity 
+2575.000e+03	Equatorial Radius (m)
+2575.000e+03	Polar Radius (m)
+
+#END

@@ -1,0 +1,12 @@
+Test 2: H2O lifetime: Numerical	Theoretical	Relative Error
+46741	45388.9	0.0289267
+
+Test 2: H2O lifetime derived from the reaction daughter product: Numerical
+spec	H2O LifeTime
+1	45657.4
+2	45594.2
+Test 2: Particle Number:
+ spec	Initial Particle Number	Final Particle Number	Reaction Yield
+0	1.6e+08	1.59999e+08	0
+1	0	6671	0.153868
+2	0	1480	0.0681787

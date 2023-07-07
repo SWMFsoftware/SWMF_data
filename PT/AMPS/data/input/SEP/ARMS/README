@@ -1,0 +1,3 @@
+The data obtained with Adaptively Refined MHD Solver (ARMS);
+saved as an IDL structure, can be processed to ASCII files with script 
+AMPS/utility/procARMS.pro

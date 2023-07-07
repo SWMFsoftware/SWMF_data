@@ -1,0 +1,27 @@
+The magnetic latitude of the Earth magnetic north pole is
+79.8 degrees North, the longitude is 288.2 degrees East.
+
+
+\begindata
+   FRAME_SM                       =  -314159
+   FRAME_-314159_NAME           = 'SM'
+   FRAME_-314159_CLASS          =  5
+   FRAME_-314159_CLASS_ID       =  -314159
+   FRAME_-314159_CENTER         =  399
+   FRAME_-314159_RELATIVE       = 'J2000'
+   FRAME_-314159_DEF_STYLE      = 'PARAMETERIZED'
+   FRAME_-314159_FAMILY         = 'TWO-VECTOR'
+   FRAME_-314159_PRI_AXIS       = 'Z'
+   FRAME_-314159_PRI_VECTOR_DEF = 'CONSTANT'
+   FRAME_-314159_PRI_SPEC       = 'LATITUDINAL'
+   FRAME_-314159_PRI_VECTOR     = ( 0, 0, 1 )
+   FRAME_-314159_PRI_UNITS      = 'DEGREES'
+   FRAME_-314159_PRI_LONGITUDE  =  288.2
+   FRAME_-314159_PRI_LATITUDE   =   79.8
+   FRAME_-314159_PRI_FRAME      = 'IAU_EARTH'
+   FRAME_-314159_SEC_AXIS       = 'X'
+   FRAME_-314159_SEC_VECTOR_DEF = 'OBSERVER_TARGET_POSITION'
+   FRAME_-314159_SEC_OBSERVER   = 'EARTH'
+   FRAME_-314159_SEC_TARGET     = 'SUN'
+   FRAME_-314159_SEC_ABCORR     = 'NONE'
+\begintext

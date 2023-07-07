@@ -1,0 +1,27 @@
+#DESCRIPTION
+SWMFSOLAR/Param/PARAM.in.awsomr: create steady state solar corona		StringDescription
+ 
+#PLANET
+EARTH			NamePlanet
+ 
+#STARTTIME
+    2013		iYear
+       4		iMonth
+      11		iDay
+       6		iHour
+       4		iMinute
+       0		iSecond
+ 0.000000000000		FracSecond
+ 
+#NSTEP
+   90000		nStep
+ 
+#TIMESIMULATION
+ 0.00000000E+00		tSimulation
+ 
+#VERSION
+ 2.40			VersionSwmf
+ 
+#PRECISION
+8			nByteReal
+ 

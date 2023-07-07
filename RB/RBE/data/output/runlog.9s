@@ -1,0 +1,679 @@
+CON_world::setup_from_file SWMF_WARNING for GM iProcLast= 999 changed to    1
+#=============================================================================#
+# ID  Version                                               nproc proc0 stride#
+#-----------------------------------------------------------------------------#
+# CON SWMF by Univ. of Michigan                version 2.20     2     0     1 #
+#-----------------------------------------------------------------------------#
+# GM  BATSRUS (Univ. of Michigan)              version 8.00     2     0     1 #
+# RB  Radiation Belt Environment, M. Fok       version 1.00     1     0     1 #
+#=============================================================================#
+CON_io::read_inputs: iSession=  1
+ModReadParam::read_file: read and broadcast nLine= 186 lines of text
+
+#VERBOSE
+100		lVerbose
+
+#DESCRIPTION
+Run GM and RB/RBE		StringDescription
+
+#PLANET
+EARTH		NamePlanet
+
+#SAVERESTART
+F		DoSaveRestart
+
+#TIMEACCURATE
+T			DoTimeAccurate (default/unchanged)
+
+#STARTTIME
+2000			iYear (default/unchanged)
+3			iMonth (default/unchanged)
+21			iDay (default/unchanged)
+10			iHour (default/unchanged)
+45			iMinute (default/unchanged)
+0			iSecond (default/unchanged)
+0.0			FracSecond (default/unchanged)
+
+#IDEALAXES
+
+#ROTATION
+F			UseRotation
+
+#BEGIN_COMP RB #############################################################
+ CON_wrapper.set_param_id CALLED by me= 0  at iter= 0
+#END_COMP RB ###############################################################
+
+#BEGIN_COMP GM #############################################################
+ CON_wrapper.set_param_id CALLED by me= 0  at iter= 0
+ GM_set_param CALLED by me= 0  at iter= 0
+GM: init_mod_restart_file: setting TypeRestartOutFile = block
+ GM_set_parameters: READ iSession = 1  iLine= 39  nLine = 170
+GM:
+GM:#MAGNETOSPHERE
+GM:T                       UseBody (default/unchanged)
+GM:2.5                     rBody
+GM:3.5                     rCurrents
+GM:10.0			BodyRhoDim		BodyNDim
+GM:25000.0			BodyTDim (default/unchanged)
+GM:
+GM:#GRID
+GM:1			nRootBlockX (default/unchanged)
+GM:1			nRootBlockY (default/unchanged)
+GM:1			nRootBlockZ (default/unchanged)
+GM:-224.			xMin
+GM:  32.			xMax
+GM:-128.			yMin
+GM: 128.			yMax
+GM:-128.			zMin
+GM: 128.			zMax
+GM:
+GM:#GRIDRESOLUTION
+GM:2.0                     Resolution		AreaResolution
+GM:initial                 NameArea
+GM:
+GM:#GRIDRESOLUTION
+GM:1/8                     Resolution		AreaResolution
+GM:sphere0                 NameArea
+GM: 5.25                   rSphere		Radius
+GM:
+GM:#GRIDRESOLUTION
+GM:1.0                     Resolution		AreaResolution
+GM:sphere0                 NameArea
+GM:17.5                    rSphere		Radius
+GM:
+GM:#GRIDRESOLUTION
+GM:4.0                     Resolution		AreaResolution
+GM:box                     NameArea
+GM:-224.0                  xMinBox
+GM: -64.0                  yMinBox
+GM: -64.0                  zMinBox
+GM:  32.0                  xMaxBox
+GM:  64.0                  yMaxBox
+GM:  64.0                  zMaxBox
+GM:
+GM:#GRIDRESOLUTION
+GM:2.0                     Resolution		AreaResolution
+GM:box                     NameArea (default/unchanged)
+GM: -96.0                  xMinBox
+GM: -32.0                  yMinBox
+GM: -32.0                  zMinBox
+GM:  32.0                  xMaxBox (default/unchanged)
+GM:  32.0                  yMaxBox
+GM:  32.0                  zMaxBox
+GM:
+GM:#GRIDRESOLUTION
+GM:1.0                     Resolution		AreaResolution
+GM:box                     NameArea (default/unchanged)
+GM: -48.0                  xMinBox
+GM: -16.0                  yMinBox
+GM: -16.0                  zMinBox
+GM:  32.0                  xMaxBox (default/unchanged)
+GM:  16.0                  yMaxBox
+GM:  16.0                  zMaxBox
+GM:
+GM:#GRIDRESOLUTION
+GM:1/2                     Resolution		AreaResolution
+GM:box                     NameArea (default/unchanged)
+GM: -32.0                  xMinBox
+GM:  -8.0                  yMinBox
+GM:  -8.0                  zMinBox
+GM:  32.0                  xMaxBox (default/unchanged)
+GM:   8.0                  yMaxBox
+GM:   8.0                  zMaxBox
+GM:
+GM:#GRIDRESOLUTION
+GM:1/4                     Resolution		AreaResolution
+GM:box                     NameArea (default/unchanged)
+GM: -32.0                  xMinBox (default/unchanged)
+GM:  -8.0                  yMinBox (default/unchanged)
+GM:  -4.0                  zMinBox
+GM:   8.0                  xMaxBox
+GM:   8.0                  yMaxBox (default/unchanged)
+GM:   4.0                  zMaxBox
+GM:
+GM:#OUTERBOUNDARY
+GM:outflow                 TypeBcEast (default/unchanged)
+GM:vary                    TypeBcWest
+GM:float                   TypeBcSouth
+GM:float                   TypeBcNorth
+GM:float                   TypeBcBottom
+GM:float                   TypeBcTop
+GM:
+GM:#INNERBOUNDARY
+GM:ionosphere		TypeBcInner (default/unchanged)
+GM:
+GM:#SAVELOGFILE
+GM:T		DoSaveLogfile
+GM:RAW			StringLogfile
+GM:1			DnSaveLogfile
+GM:-1.			DtSaveLogfile (default/unchanged)
+GM:
+GM:#UPSTREAM_INPUT_FILE
+GM:T                                                     UseUpstreamInputFile		UseSolarWindFile
+GM:GM/Param/TESTSUITE/Inputfiles/IMF_NSturning_1nT.dat   NameUpstreamFile		NameSolarWindFile
+GM:
+GM:#SCHEME
+GM:2			nOrder (default/unchanged)
+GM:Rusanov			TypeFlux
+GM:minmod			TypeLimiter (default/unchanged)
+GM:
+GM:#TIMESTEPPING
+GM:2			nStage (default/unchanged)
+GM:0.8			CflExpl (default/unchanged)
+GM:
+GM:#SAVEPLOT
+GM:3                       nPlotFile
+GM:x=0 FUL idl             StringPlot
+GM:-1                      DnSavePlot (default/unchanged)
+GM:10.			DtSavePlot
+GM:-1.                     DxSavePlot (resolution, 0. maximum, -1. unstructured)
+GM:y=0 FUL idl             StringPlot
+GM:-1                      DnSavePlot (default/unchanged)
+GM:10.			DtSavePlot
+GM:-1.                     DxSavePlot (resolution, 0. maximum, -1. unstructured)
+GM:z=0 FUL idl             StringPlot
+GM:-1                      DnSavePlot (default/unchanged)
+GM:10.			DtSavePlot
+GM:-1.                     DxSavePlot (resolution, 0. maximum, -1. unstructured)
+#END_COMP GM ###############################################################
+
+#COUPLE1
+GM			NameComp1		NameSource
+RB			NameComp2		NameTarget
+-1                      DnCouple (default/unchanged)
+3.0                     Dtcouple		DtCouple
+
+#COUPLETIME
+GM			NameComp (default/unchanged)
+F			DoCoupleOnTime
+
+#STOP
+-1			MaxIteration
+9.0			tSimulationMax
+ CON_axes::init_axes CALLED by me= 0  at iter= 0
+ CON_axes::set_axes CALLED by me= 0  at iter= 0
+ CON_wrapper.set_param_id CALLED by me= 0  at iter= 0
+ GM_set_param CALLED by me= 0  at iter= 0
+ GM_set_parameters: CHECK iSession = 1
+  
+GM: read_upstream_input_file reading GM/Param/TESTSUITE/Inputfiles/IMF_NSturning_1nT.dat
+GM: read_upstream_input_file read  2  points from GM/Param/TESTSUITE/Inputfiles/IMF_NSturning_1nT.dat
+ CON_wrapper.set_param_id CALLED by me= 0  at iter= 0
+ CON_session::init_session CALLED by me= 0  at iter= 0
+ ----- Starting Session  1  ------
+ CON_wrapper::init_session_comp_id CALLED by me= 0  at iter= 0
+ GM_init_session CALLED by me= 0  at iter= 0
+
+GM: BATSRUS: Block Adaptive Tree Solar-Wind Roe Upwind Scheme
+GM:          for 3D Heliospheric Flows
+GM: University of Michigan, 1995-2007
+
+GM: EQUATIONS:   MHD
+GM: USER MODULE: DEFAULT EMPTY ROUTINES 1.00
+
+GM: BATS_setup starting initial refinement level  1
+GM: parallel_refine starting to refine  1  block(s) on PE 0
+GM: BATS_setup starting initial refinement level  2
+GM: parallel_refine starting to refine  8  block(s) on PE 0
+GM: BATS_setup starting initial refinement level  3
+GM: parallel_refine starting to refine  16  block(s) on PE 0
+GM: BATS_setup starting initial refinement level  4
+GM: parallel_refine starting to refine  16  block(s) on PE 0
+GM: renumber_octree: finished renumbering 288  blocks.
+GM:     total blocks =  288
+GM:
+GM:    Begin Numerical Simulation
+GM:    --------------------------
+GM:
+GM:
+GM:    Planetary Parameters
+GM:    --------------------
+GM:
+GM:          Name:            EARTH  (---!---Defaults Modified---!---)  
+GM:          Radius:           6.37800E+06
+GM:          Mass:             5.97600E+24
+GM:          Rotation Tilt:    4.10152E-01
+GM:          Rotation Period: Not Rotating
+GM:          Orbit Period:     3.15569E+07
+GM:          Iono Height:      1.10000E+05
+GM:
+GM:    Physical Parameters
+GM:    -------------------
+GM:
+GM:          I/O Unit type: PLANETARY            Normalization: PLANETARY
+GM:
+GM:          gamma:         1.66666667
+GM:
+GM:          rBody:         2.50000E+00, rPlanet:     6.37800E+06
+GM:          BodyNDim:      1.00000E+01, BodyTDim:    2.50000E+04
+GM:          Bdp:          -1.06359E+02, Tilt:       -0.00000E+00
+GM:
+GM:          body2: .false.
+GM:
+GM:          cLIGHTfactor:  1.00000E+00, cLIGHT:      4.70038E+01
+GM:
+GM:
+GM:          SW_n_dim   [/cc  ]:        5.000000,  SW_n:         5.000000
+GM:          SW_Rho_dim [Mp/cc]:        5.000000,  SW_Rho:       5.000000
+GM:          SW_Ux_dim  [km/s ]:     -400.000000,  SW_Ux:       -0.062716
+GM:          SW_Uy_dim  [km/s ]:        0.000000,  SW_Uy:        0.000000
+GM:          SW_Uz_dim  [km/s ]:        0.000000,  SW_Uz:        0.000000
+GM:          SW_p_dim   [nPa  ]:        0.006904,  SW_p:         0.000101
+GM:          SW_Bx_dim  [nT   ]:        0.000000,  SW_Bx:        0.000000
+GM:          SW_By_dim  [nT   ]:        0.000000,  SW_By:        0.000000
+GM:          SW_Bz_dim  [nT   ]:        1.000000,  SW_Bz:        0.003420
+GM:          SW_T_dim   [K    ]:   100000.000000
+GM:
+GM:    MHD Numerical Solution Parameters
+GM:    ---------------------------------
+GM:
+GM:          2nd-Order Scheme
+GM:          with limiter minmod
+GM:          Time accurate calculation
+GM:          Rusanov Flux Function
+GM:          Explicit Time Stepping
+GM:
+GM:    Other Runtime Parameters
+GM:    ------------------------
+GM:
+GM: Available processors: nProc =  2
+GM:
+GM: After initial grid setup:
+GM:   nBlockMax =  286  nBLK =  720
+GM:   Total number of blocks used =  288
+GM:   Total number of cells =  147456
+GM:   Smallest cell dx:    2.0000000000000000   Largest cell dx:    8.0000000000000000
+GM:
+GM: root blocks:        1       1       1
+GM: nCells:             8       8       8
+GM: x:              -224.00000000     32.00000000
+GM: y:              -128.00000000    128.00000000
+GM: z:              -128.00000000    128.00000000
+GM: multistage:         2
+GM: cfl:               0.80000000
+GM:
+GM:saved ifile= 3 type=x=0_ful    at n_step=      0 time=   0:00:00 h:m:s
+GM:saved ifile= 4 type=y=0_ful    at n_step=      0 time=   0:00:00 h:m:s
+GM:saved ifile= 5 type=z=0_ful    at n_step=      0 time=   0:00:00 h:m:s
+ CON_wrapper::init_session_comp_id CALLED by me= 0  at iter= 0
+ CON_wrapper.set_param_id CALLED by me= 0  at iter= 0
+ GM_set_param CALLED by me= 0  at iter= 0
+ test_grids CALLED by me= 0  at iter= 0
+ CON_wrapper.set_param_id CALLED by me= 0  at iter= 0
+ RB_set_grid CALLED by me= 0  at iter= 0
+ test_grids CALLED by me= 0  at iter= 0
+ ir,ip= 51 48
+ size(xlati)= 53  size(phi)= 48
+ xlati=   0.1717456343839980   0.2061059313680104   0.2404540110472588   0.2747497308489474   0.3090105440655960   0.3432189974046849   0.3773750908662139   0.4114788244501831   0.4455301981565925   0.4794943054004021   0.5133711461816121   0.5471607205002224   0.5808281217711930   0.6143558967020041   0.6477265920001356   0.6808878477880278   0.7137873041881209   0.7463551480303351   0.7784866595595508   0.8099898525580483   0.8406029276380289   0.8698197393164141   0.8967850762597264   0.9215163917604861   0.9442231253289323   0.9650449033052246   0.9841388053220426   1.0016793643045856   1.0177538467154534   1.0325018788948055   1.0460281805977616   1.0584549248719612   1.0698344715949641   1.0802889938144102   1.0898708514078590   1.0986673108379104   1.1067481852746441   1.1146021669086188   1.1224561485425932   1.1303101301765677   1.1381641118105421   1.1460180934445168   1.1538720750784910   1.1617260567124656   1.1695800383464401   1.1774340199804145   1.1852880016143892   1.1931419832483634
+   1.2009959648823381   1.2088499465163125   1.2167039281502869   1.2245579097842616   1.2324118914182358
+ phi=  0.0000000000000000E+000   0.1308996938995747   0.2617993877991494   0.3926990816987241   0.5235987755982988   0.6544984694978735   0.7853981633974483   0.9162978572970230   1.0471975511965976   1.1780972450961724   1.3089969389957470   1.4398966328953218   1.5707963267948966   1.7016960206944711   1.8325957145940459   1.9634954084936205   2.0943951023931953   2.2252947962927698   2.3561944901923448   2.4870941840919194   2.6179938779914940   2.7488935718910690   2.8797932657906435   3.0106929596902181   3.1415926535897931   3.2724923474893677   3.4033920413889422   3.5342917352885168   3.6651914291880918   3.7960911230876664   3.9269908169872410   4.0578905108868160   4.1887902047863905   4.3196898986859651   4.4505895925855397   4.5814892864851142   4.7123889803846897   4.8432886742842642   4.9741883681838388   5.1050880620834134   5.2359877559829879   5.3668874498825625   5.4977871437821380   5.6286868376817125   5.7595865315812871   5.8904862254808616   6.0213859193804362   6.1522856132800108
+ CON_couple_all::couple_two_comp CALLED by me= 0  at iter= 0
+ couple_gm_rb CALLED by me= 0  at iter= 0
+ GM_get_for_rb_tec CALLED by me= 0  at iter= 0
+ GM_get_for_rb_idl CALLED by me= 0  at iter= 0
+ GM_get_for_rb CALLED by me= 0  at iter= 0
+-------------------------------------------------------------------------------
+SORTED TIMING at step       0 RB on PE    0
+name                       sec   percent     #iter    #calls
+-------------------------------------------------------------------------------
+SWMF                     81.21    100.00         1         1
+-------------------------------------------------------------------------------
+SETUP                    81.21    100.00         1         1
+rbe_field                76.70     94.45         1         1
+rbe_trace                76.35     94.02         1         1
+rk4_tsyndipole           72.05     88.72         1    216009
+rbe_taylor                2.73      3.36         1      2496
+rbe_initial               1.23      1.52         1         1
+GM_RB_couple              0.50      0.62         1         1
+integrate_ray          CON_wrapper.set_param_id CALLED by me= 1  at iter= 0
+ CON_wrapper.set_param_id CALLED by me= 1  at iter= 0
+ GM_set_param CALLED by me= 1  at iter= 0
+ CON_axes::init_axes CALLED by me= 1  at iter= 0
+ CON_axes::set_axes CALLED by me= 1  at iter= 0
+ CON_wrapper.set_param_id CALLED by me= 1  at iter= 0
+ GM_set_param CALLED by me= 1  at iter= 0
+ CON_wrapper.set_param_id CALLED by me= 1  at iter= 0
+ CON_session::init_session CALLED by me= 1  at iter= 0
+ CON_wrapper::init_session_comp_id CALLED by me= 1  at iter= 0
+ GM_init_session CALLED by me= 1  at iter= 0
+ CON_wrapper::init_session_comp_id CALLED by me= 1  at iter= 0
+ CON_wrapper.set_param_id CALLED by me= 1  at iter= 0
+ GM_set_param CALLED by me= 1  at iter= 0
+ test_grids CALLED by me= 1  at iter= 0
+ CON_wrapper.set_param_id CALLED by me= 1  at iter= 0
+ RB_set_grid CALLED by me= 1  at iter= 0
+ test_grids CALLED by me= 1  at iter= 0
+ ir,ip= 51 48
+ size(xlati)= 53  size(phi)= 48
+ xlati=  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000
+  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000
+ phi=  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000
+  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000  0.0000000000000000E+000
+ CON_couple_all::couple_two_comp CALLED by me= 1  at iter= 0
+ couple_gm_rb CALLED by me= 1  at iter= 0
+ GM_get_for_rb_tec CALLED by me= 1  at iter= 0
+ GM_get_for_rb_idl CALLED by me= 1  at iter= 0
+ GM_get_for_rb CALLED by me= 1  at iter= 0
+ CON_session::do_session CALLED by me= 1  at iter= 0
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 1
+ GM_run CALLED by me= 1  at iter= 1
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 2
+ GM_run CALLED by me= 1  at iter= 2
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 3
+ GM_run CALLED by me= 1  at iter= 3
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter=     0.50      0.62         1         1
+save_plot                 0.49      0.61         1         3
+load_balance              0.29      0.35         1         1
+tsyndipole                0.22      0.27         1      2496
+exch_msgs                 0.19      0.24         1         1
+rbe_vdrift                0.10      0.12         1         1
+rbe_sort                  0.06      0.07         1      2496
+rbe_convection            0.01      0.01         1         1
+rbe_boundary              0.01      0.01         1         1
+-------------------------------------------------------------------------------
+ Resetting timing counters after setup.
+ CON_session::do_session CALLED by me= 0  at iter= 0
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 1
+ GM_run CALLED by me= 0  at iter= 1
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 1
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 2
+ GM_run CALLED by me= 0  at iter= 2
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 3
+ GM_run CALLED by me= 0  at iter= 3
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 4
+ GM_run CALLED by me= 0  at iter= 4
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 5
+ GM_run CALLED by me= 0  at iter= 5
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 6
+ GM_run CALLED by me= 0  at iter= 6
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 7
+ GM_run CALLED by me= 0  at iter= 7
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 8
+ GM_run CALLED by me= 0  at iter= 8
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 9
+ GM_run CALLED by me= 0  at iter= 9
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 10
+ GM_run CALLED by me= 0  at iter= 10
+Progress:      10 steps,   1.29103     s simulation time,     39.42 s CPU time
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 11
+ GM_run CALLED by me= 0  at iter= 11
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 12
+ GM_run CALLED by me= 0  at iter= 12
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 13
+ GM_run CALLED by me= 0  at iter= 13
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 14
+ GM_run CALLED by me= 0  at iter= 14
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 15
+ GM_run CALLED by me= 0  at iter= 15
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 16
+ GM_run CALLED by me= 0  at iter= 16
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 17
+ GM_run CALLED by me= 0  at iter= 17
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 18
+ GM_run CALLED by me= 0  at iter= 18
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 19
+ GM_run CALLED by me= 0  at iter= 19
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 20
+ GM_run CALLED by me= 0  at iter= 20
+Progress:      20 steps,   2.80850     s simulation time,     75.13 s CPU time
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 21
+ GM_run CALLED by me= 0  at iter= 21
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 22
+ GM_run CALLED by me= 0  at iter= 22
+ CON_couple_all::couple_two_comp CALLED by me= 0  at iter= 22
+ couple_gm_rb CALLED by me= 0  at iter= 22
+ GM_get_for_rb_tec CALLED by me= 0  at iter= 22
+ GM_get_for_rb_idl CALLED by me= 0  at iter= 22
+ GM_get_for_rb CALLED by me= 0  at iter= 22
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 23
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 24
+ GM_run CALLED by me= 0  at iter= 24
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 25
+ GM_run CALLED by me= 0  at iter= 25
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 26
+ GM_run CALLED by me= 0  at iter= 26
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 27
+ GM_run CALLED by me= 0  at iter= 27
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 28
+ GM_run CALLED by me= 0  at iter= 28
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 29
+ GM_run CALLED by me= 0  at iter= 29
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 30
+ GM_run CALLED by me= 0  at iter= 30
+Progress:      30 steps,   4.23349     s simulation time,    110.63 s CPU time
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 31
+ GM_run CALLED by me= 0  at iter= 31
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 32
+ GM_run 4
+ GM_run CALLED by me= 1  at iter= 4
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 5
+ GM_run CALLED by me= 1  at iter= 5
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 6
+ GM_run CALLED by me= 1  at iter= 6
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 7
+ GM_run CALLED by me= 1  at iter= 7
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 8
+ GM_run CALLED by me= 1  at iter= 8
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 9
+ GM_run CALLED by me= 1  at iter= 9
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 10
+ GM_run CALLED by me= 1  at iter= 10
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 11
+ GM_run CALLED by me= 1  at iter= 11
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 12
+ GM_run CALLED by me= 1  at iter= 12
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 13
+ GM_run CALLED by me= 1  at iter= 13
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 14
+ GM_run CALLED by me= 1  at iter= 14
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 15
+ GM_run CALLED by me= 1  at iter= 15
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 16
+ GM_run CALLED by me= 1  at iter= 16
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 17
+ GM_run CALLED by me= 1  at iter= 17
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 18
+ GM_run CALLED by me= 1  at iter= 18
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 19
+ GM_run CALLED by me= 1  at iter= 19
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 20
+ GM_run CALLED by me= 1  at iter= 20
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 21
+ GM_run CALLED by me= 1  at iter= 21
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 22
+ GM_run CALLED by me= 1  at iter= 22
+ CON_couple_all::couple_two_comp CALLED by me= 1  at iter= 22
+ couple_gm_rb CALLED by me= 1  at iter= 22
+ GM_get_for_rb_tec CALLED by me= 1  at iter= 22
+ GM_get_for_rb_idl CALLED by me= 1  at iter= 22
+ GM_get_for_rb CALLED by me= 1  at iter= 22
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 24
+ GM_run CALLED by me= 1  at iter= 24
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 25
+ GM_run CALLED by me= 1  at iter= 25
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 26
+ GM_run CALLED by me= 1  at iter= 26
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 27
+ GM_run CALLED by me= 1  at iter= 27
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 28
+ GM_run CALLED by me= 1  at iter= 28
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 29
+ GM_run CALLED by me= 1  at iter= 29
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 30
+ GM_run CALLED by me= 1  at iter= 30
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 31
+ GM_run CALLED by me= 1  at iter= 31
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 32
+ GM_run CALLED by me= 1  at iter= 32
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 33
+ GM_run CALLED by me= 1  at iter= 33
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 34
+ GM_run CALLED by me= 1  at iter= 34
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 35
+ GM_run CALLED by me= 1  at iter= 35
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 36
+ GM_run CALLED by me= 1  at iter= 36
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 37
+ GM_run CALLED by me= 1  at iter= 37
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 38
+ GM_run CALLED by me= 1  at iter= 38
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 39
+ GM_run CALLED by me= 1  at iter= 39
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 40
+ GM_run CALLED by me= 1  at iter= 40
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 41
+ GM_run CALLED by me= 1  at iter= 41
+ CON_couple_all::couple_two_comp CALLED by me= 1  at iter= 41
+ couple_gm_rb CALLED by me= 1  at iter= 41
+ GM_get_for_rb_tec CALLED by me= 1  at iter= 41
+ GM_get_for_rb_idl CALLED by me= 1  at iter= 41
+ GM_get_for_rb CALLED by me= 1  at iter= 41
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 43
+ GM_run CALLED by me= 1  at iter= 43
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 44
+ GM_run CALLED by me= 1  at iter= 44
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 45
+ GM_run CALLED by me= 1  atCALLED by me= 0  at iter= 32
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 33
+ GM_run CALLED by me= 0  at iter= 33
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 34
+ GM_run CALLED by me= 0  at iter= 34
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 35
+ GM_run CALLED by me= 0  at iter= 35
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 36
+ GM_run CALLED by me= 0  at iter= 36
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 37
+ GM_run CALLED by me= 0  at iter= 37
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 38
+ GM_run CALLED by me= 0  at iter= 38
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 39
+ GM_run CALLED by me= 0  at iter= 39
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 40
+ GM_run CALLED by me= 0  at iter= 40
+Progress:      40 steps,   5.87892     s simulation time,    146.86 s CPU time
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 41
+ GM_run CALLED by me= 0  at iter= 41
+ CON_couple_all::couple_two_comp CALLED by me= 0  at iter= 41
+ couple_gm_rb CALLED by me= 0  at iter= 41
+ GM_get_for_rb_tec CALLED by me= 0  at iter= 41
+ GM_get_for_rb_idl CALLED by me= 0  at iter= 41
+ GM_get_for_rb CALLED by me= 0  at iter= 41
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 42
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 43
+ GM_run CALLED by me= 0  at iter= 43
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 44
+ GM_run CALLED by me= 0  at iter= 44
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 45
+ GM_run CALLED by me= 0  at iter= 45
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 46
+ GM_run CALLED by me= 0  at iter= 46
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 47
+ GM_run CALLED by me= 0  at iter= 47
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 48
+ GM_run CALLED by me= 0  at iter= 48
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 49
+ GM_run CALLED by me= 0  at iter= 49
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 50
+ GM_run CALLED by me= 0  at iter= 50
+Progress:      50 steps,   7.41426     s simulation time,    182.18 s CPU time
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 51
+ GM_run CALLED by me= 0  at iter= 51
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 52
+ GM_run CALLED by me= 0  at iter= 52
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 53
+ GM_run CALLED by me= 0  at iter= 53
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 54
+ GM_run CALLED by me= 0  at iter= 54
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 55
+ GM_run CALLED by me= 0  at iter= 55
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 56
+ GM_run CALLED by me= 0  at iter= 56
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 57
+ GM_run CALLED by me= 0  at iter= 57
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 58
+ GM_run CALLED by me= 0  at iter= 58
+ CON_wrapper::run_comp_id CALLED by me= 0  at iter= 59
+ GM_run CALLED by me= 0  at iter= 59
+ CON_couple_all::couple_two_comp CALLED by me= 0  at iter= 59
+ couple_gm_rb CALLED by me= 0  at iter= 59
+ GM_get_for_rb_tec CALLED by me= 0  at iter= 59
+ GM_get_for_rb_idl CALLED by me= 0  at iter= 59
+ GM_get_for_rb CALLED by me= 0  at iter= 59
+
+    Finished Numerical Simulation
+    -----------------------------
+   Simulated Time T =   0.90000E+01 (    0.150000 min,     0.002500 hrs)
+ CON_wrapper::finalize_comp_id CALLED by me= 0  at iter= 59
+GM:saved ifile= 3 type=x=0_ful    at n_step=     57 time=   0:00:09 h:m:s
+GM:saved ifile= 4 type=y=0_ful    at n_step=     57 time=   0:00:09 h:m:s
+GM:saved ifile= 5 type=z=0_ful    at n_step=     57 time=   0:00:09 h:m:s
+GM: error report: no errors...
+ CON_wrapper::finalize_comp_id CALLED by me= 0  at iter= 59
+
+    Finished Finalizing SWMF
+    ------------------------
+-------------------------------------------------------------------------------
+SORTED TIMING from step       0 to      59 RB on PE    0
+name                       sec   percent     #iter    #calls
+-------------------------------------------------------------------------------
+SWMF                    215.50    100.00         1         1
+----------------------------------------------------------- iter= 45
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 46
+ GM_run CALLED by me= 1  at iter= 46
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 47
+ GM_run CALLED by me= 1  at iter= 47
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 48
+ GM_run CALLED by me= 1  at iter= 48
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 49
+ GM_run CALLED by me= 1  at iter= 49
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 50
+ GM_run CALLED by me= 1  at iter= 50
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 51
+ GM_run CALLED by me= 1  at iter= 51
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 52
+ GM_run CALLED by me= 1  at iter= 52
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 53
+ GM_run CALLED by me= 1  at iter= 53
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 54
+ GM_run CALLED by me= 1  at iter= 54
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 55
+ GM_run CALLED by me= 1  at iter= 55
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 56
+ GM_run CALLED by me= 1  at iter= 56
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 57
+ GM_run CALLED by me= 1  at iter= 57
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 58
+ GM_run CALLED by me= 1  at iter= 58
+ CON_wrapper::run_comp_id CALLED by me= 1  at iter= 59
+ GM_run CALLED by me= 1  at iter= 59
+ CON_couple_all::couple_two_comp CALLED by me= 1  at iter= 59
+ couple_gm_rb CALLED by me= 1  at iter= 59
+ GM_get_for_rb_tec CALLED by me= 1  at iter= 59
+ GM_get_for_rb_idl CALLED by me= 1  at iter= 59
+ GM_get_for_rb CALLED by me= 1  at iter= 59
+ CON_wrapper::finalize_comp_id CALLED by me= 1  at iter= 59
+ CON_wrapper::finalize_comp_id CALLED by me= 1  at iter= 59
+--------------------
+GM_run                  205.04     95.14        57        57
+-------------------------------------------------------------------------------
+advance                 201.48     93.49        57        57
+calc_fluxes              71.20     33.04        57     16416
+calc_facevalues          50.89     23.61        57     16416
+calc_sources             28.29     13.13        57     16416
+exch_msgs                15.69      7.28        57       114
+update_states            15.58      7.23        57     16416
+RB_run                    8.53      3.96         3         3
+calc_face_bfo             6.85      3.18        57     10032
+update_check              4.76      2.21        57       114
+save_logfile              3.47      1.61        57        57
+send_cons_flux            2.86      1.33        57       114
+calc_fluxes_bfo           2.24      1.04        57     10032
+GM_RB_couple              1.44      0.67         3         3
+integrate_ray             1.43      0.67         3         3
+int_domain                0.86      0.40        57        57
+save_plot                 0.49      0.23         1         3
+nonconservative           0.47      0.22        57        57
+barrier-expl2             0.35      0.16        57       114
+barrier-expl1             0.24      0.11        57       114
+set_BCs                   0.19      0.09        57       456
+-------------------------------------------------------------------------------
