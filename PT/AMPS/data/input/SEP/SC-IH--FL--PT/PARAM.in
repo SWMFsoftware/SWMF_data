@@ -355,6 +355,14 @@ pnt mhd tec		StringPlot
 #SEP_MODEL_EQUATION
 Parker
 
+#SEP_MOVER1D  
+Droge_2009_AJ1		[HE_2019_AJL,Kartavykh_2016_AJ,BOROVIKOV_2019_ARXIV,Droge_2009_AJ,Droge_2009_AJ1,MeanFreePathScattering,Tenishev_2005_FL]
+
+#SEP_MAX_TURBUENCE_LEVEL
+0.1			[max value of (db/B)^2 
+
+#SEP_LIMIT_MEAN_FREE_PATH
+T			[T,F] - set the Larmor radius be a lower limit of the 
 
 
 #SEP_PITCH_ANGLE_SCATTERING_FUCTION
