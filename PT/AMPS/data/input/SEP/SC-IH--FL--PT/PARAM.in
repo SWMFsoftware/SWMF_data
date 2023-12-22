@@ -351,18 +351,26 @@ pnt mhd tec		StringPlot
 !T                       useFixedDt
 !1.0                     fixedDt
 
+#SEP_PREPOPULATE_FIELD_LINES
+T
 
 #SEP_MODEL_EQUATION
 Parker
 
+#SEP_SCATTER_ONLY_INCOMING_WAVES
+T			[T,F] (if vParallel>0, then scatter only of the wave movinf with -vAlfven, or if vParallel<0, them scatter on the wave moveing with +vAlfven)
+
 #SEP_MOVER1D  
 Droge_2009_AJ1		[HE_2019_AJL,Kartavykh_2016_AJ,BOROVIKOV_2019_ARXIV,Droge_2009_AJ,Droge_2009_AJ1,MeanFreePathScattering,Tenishev_2005_FL]
 
-#SEP_MAX_TURBUENCE_LEVEL
-0.1			[max value of (db/B)^2 
+!#SEP_MAX_TURBUENCE_LEVEL
+!0.1			[max value of (db/B)^2 
 
-#SEP_LIMIT_MEAN_FREE_PATH
-T			[T,F] - set the Larmor radius be a lower limit of the 
+!#SEP_LIMIT_MEAN_FREE_PATH
+!T			[T,F] - set the Larmor radius be a lower limit of the 
+
+!#SEP_LIMIT_SCATTERING_EVENT_NUMBER 
+!100			set the limit on the simulated scattering event number
 
 
 #SEP_PITCH_ANGLE_SCATTERING_FUCTION
@@ -387,11 +395,23 @@ fraction		[fraction,awsom] the source of the dB/B
 30                    NumberParticles per iteration
 0.1                      min energy [MeV]
 1                     max energy [MeV]
-shock               location of particle injection [beginning - beginning of a shield line, shock - at the location of wave]
+beginning               location of particle injection [beginning - beginning of a field line, shock - at the location of wave]
 
-#SEP_INJECTION_TYPE_FL_SOKOLOV_2004AJ 
-4                       spectral index
-3.4E-4                  Injection Efficiency Constant
+#SEP_INJECTION_TYPE_BACKGROUND_SW
+
+#SEP_ACCELERATION_MODEL_VELOCITY_SWITCH_FACTOR
+100 			when particle's velocity is below the factor times vAlfven, an interaction with two wave branches independently is considered 
+
+#SEP_ACCELERATION_MODEL
+scattering		[diffusion,scattering]
+
+#SEP_SWITCH2_PITCH_ANGLE_SCATTERING
+0.5			the limiting value of the pitch angle variation per iteration, when switch to scattering
+reflect			[reflect,uniform,off]
+
+!#SEP_INJECTION_TYPE_FL_SOKOLOV_2004AJ 
+!4                       spectral index
+!3.4E-4                  Injection Efficiency Constant
 
 !#SEP_INJECTION_TYPE_FL_CONST_ENERGY
 !100.0                  particles are ijected in the simulation with const enrergy [MeV] and specified value of mu
@@ -459,7 +479,7 @@ F			DoAmr
 
 #STOP
 -1			MaxIter
-800			TimeMax
+8000			TimeMax
 
 End session: 2
 #END ##########################################################################
