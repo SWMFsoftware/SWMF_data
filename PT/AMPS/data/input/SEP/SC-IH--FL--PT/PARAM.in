@@ -361,7 +361,7 @@ Parker
 T			[T,F] (if vParallel>0, then scatter only of the wave movinf with -vAlfven, or if vParallel<0, them scatter on the wave moveing with +vAlfven)
 
 #SEP_MOVER1D  
-Droge_2009_AJ1		[HE_2019_AJL,Kartavykh_2016_AJ,BOROVIKOV_2019_ARXIV,Droge_2009_AJ,Droge_2009_AJ1,MeanFreePathScattering,Tenishev_2005_FL]
+Droge_2009_AJ		[HE_2019_AJL,Kartavykh_2016_AJ,BOROVIKOV_2019_ARXIV,Droge_2009_AJ,MeanFreePathScattering,Tenishev_2005_FL]
 
 #SEP_MAX_TURBUENCE_LEVEL
 0.1			[max value of (db/B)^2 
