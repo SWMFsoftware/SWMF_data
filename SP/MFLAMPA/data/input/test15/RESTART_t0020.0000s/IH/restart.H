@@ -1,9 +1,6 @@
-#CODEVERSION
- 9.90			CodeVersion
 
 #USERMODULE
 AWSoM(R) model		NameUserModule
- 1.00			VersionUserModule
 
 #COMPONENT
 IH			NameComp
