@@ -1,9 +1,5 @@
-#CODEVERSION
- 9.20                        CodeVersion
-
 #USERMODULE
 Europa Single-Fluid MHD Pe, Xianzhe Jia, June 2013
- 0.20                  VersionUserModule
 
 #COMPONENT
 GM                              NameComp

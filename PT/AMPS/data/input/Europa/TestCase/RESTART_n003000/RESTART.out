@@ -1,5 +1,5 @@
 #DESCRIPTION
-Please describe me!
+MHD restart file for test13
 
 #PLANET
 EUROPA                        NamePlanet
@@ -18,9 +18,6 @@ EUROPA                        NamePlanet
 
 #TIMESIMULATION
  0.00000000E+00              tSimulation
-
-#VERSION
- 2.30                        VersionSwmf
 
 #PRECISION
 8                            nByteReal  
