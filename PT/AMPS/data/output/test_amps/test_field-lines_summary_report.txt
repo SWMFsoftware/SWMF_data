@@ -4,4 +4,23 @@ Total tests run: 16
 Tests passed: 16
 Tests failed: 0
 
+Details of passed tests:
+Test Passed: InlineTest.IntegerEquality
+Test Passed: ParticleBufferTest.InitializationTest
+Test Passed: ParticleBufferTest.ParticleAllocationAndDeletionTest
+Test Passed: ParticleBufferTest.ParticleDataAccessTest
+Test Passed: ParticleBufferTest.ParticleCloneTest
+Test Passed: ParticleBufferTest.ParticleListOperationsTest
+Test Passed: ParticleBufferTest.ParticleWeights
+Test Passed: ParticleBuffer.RequestDataStorageBeforeInit
+Test Passed: ParticleMergeTest/ParticleMergeTest.MyHandlesInputs/0
+Test Passed: ParticleMergeTest/ParticleMergeTest.MyHandlesInputs/1
+Test Passed: ParticleMergeTest/ParticleMergeTest.MyHandlesInputs/2
+Test Passed: ParticleMergeTest/ParticleMergeTest.MyHandlesInputs/3
+Test Passed: ParticleSplitTest/ParticleSplitTest.MyHandlesInputs/0
+Test Passed: ParticleSplitTest/ParticleSplitTest.MyHandlesInputs/1
+Test Passed: ParticleSplitTest/ParticleSplitTest.MyHandlesInputs/2
+Test Passed: ParticleSplitTest/ParticleSplitTest.MyHandlesInputs/3
+
 Details of failed tests:
+

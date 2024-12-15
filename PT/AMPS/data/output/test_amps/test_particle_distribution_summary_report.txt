@@ -1,0 +1,11 @@
+Google Test Summary Report
+===========================
+Total tests run: 1
+Tests passed: 1
+Tests failed: 0
+
+Details of passed tests:
+Test Passed: ParticleDistributionTest.MexwellianDistributionTest
+
+Details of failed tests:
+
