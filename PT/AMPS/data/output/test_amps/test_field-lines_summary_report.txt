@@ -1,0 +1,7 @@
+Google Test Summary Report
+===========================
+Total tests run: 16
+Tests passed: 16
+Tests failed: 0
+
+Details of failed tests:
