@@ -1,0 +1,34 @@
+Google Test Summary Report
+===========================
+Total tests run: 24
+Tests passed: 24
+Tests failed: 0
+
+Details of passed tests:
+Test Passed: ParticleCollisionTest/ParticleCollisionTest.MyHandlesInputs/0
+Test Passed: ParticleCollisionTest/ParticleCollisionTest.MyHandlesInputs/1
+Test Passed: ParticleCollisionTest/ParticleCollisionTest.MyHandlesInputs/2
+Test Passed: ParticleCollisionTest/ParticleCollisionTest.MyHandlesInputs/3
+Test Passed: ParticleCollisionTest/ParticleCollisionTest.MyHandlesInputs/4
+Test Passed: ParticleCollisionTest/ParticleCollisionTest.MyHandlesInputs/5
+Test Passed: ParticleCollisionTest/ParticleCollisionTest.MyHandlesInputs/6
+Test Passed: ParticleCollisionTest/ParticleCollisionTest.MyHandlesInputs/7
+Test Passed: ParticleCollisionTest/ParticleCollisionTest.MyHandlesInputs/8
+Test Passed: ParticleCollisionTest/ParticleCollisionTest.MyHandlesInputs/9
+Test Passed: ParticleCollisionTest/ParticleCollisionTest.MyHandlesInputs/10
+Test Passed: ParticleCollisionTest/ParticleCollisionTest.MyHandlesInputs/11
+Test Passed: ParticleCollisionTest/ParticleCollisionTest.MyHandlesInputs/12
+Test Passed: ParticleCollisionTest/ParticleCollisionTest.MyHandlesInputs/13
+Test Passed: ParticleCollisionTest/ParticleCollisionTest.MyHandlesInputs/14
+Test Passed: ParticleCollisionTest/ParticleCollisionTest.MyHandlesInputs/15
+Test Passed: ParticleCollisionTest/ParticleCollisionTest.MyHandlesInputs/16
+Test Passed: ParticleCollisionTest/ParticleCollisionTest.MyHandlesInputs/17
+Test Passed: ParticleCollisionTest/ParticleCollisionTest.MyHandlesInputs/18
+Test Passed: ParticleCollisionTest/ParticleCollisionTest.MyHandlesInputs/19
+Test Passed: VelocityAfterCollisionTest/VelocityAfterCollisionTest.MyHandlesInputs/0
+Test Passed: VelocityAfterCollisionTest/VelocityAfterCollisionTest.MyHandlesInputs/1
+Test Passed: VelocityAfterCollisionTest/VelocityAfterCollisionTest.MyHandlesInputs/2
+Test Passed: VelocityAfterCollisionTest/VelocityAfterCollisionTest.MyHandlesInputs/3
+
+Details of failed tests:
+
