@@ -361,7 +361,7 @@ Parker
 T			[T,F] (if vParallel>0, then scatter only of the wave movinf with -vAlfven, or if vParallel<0, them scatter on the wave moveing with +vAlfven)
 
 #SEP_MOVER1D  
-Droge_2009_AJ		[HE_2019_AJL,Kartavykh_2016_AJ,BOROVIKOV_2019_ARXIV,Droge_2009_AJ,MeanFreePathScattering,Tenishev_2005_FL]
+Parker_MeanFreePath	[Parker_MeanFreePath,HE_2019_AJL,Kartavykh_2016_AJ,BOROVIKOV_2019_ARXIV,Droge_2009_AJ,MeanFreePathScattering,Tenishev_2005_FL]
 
 #SEP_MAX_TURBUENCE_LEVEL
 0.1			[max value of (db/B)^2 
@@ -394,10 +394,10 @@ fraction		[fraction,awsom] the source of the dB/B
 #SEP_INJECTION_FL 
 30                    NumberParticles per iteration
 0.1                      min energy [MeV]
-1                     max energy [MeV]
-beginning               location of particle injection [beginning - beginning of a field line, shock - at the location of wave]
+300                      max energy [MeV]
+shock               location of particle injection [beginning - beginning of a field line, shock - at the location of wave]
 
-#SEP_INJECTION_TYPE_BACKGROUND_SW
+!#SEP_INJECTION_TYPE_BACKGROUND_SW
 
 #SEP_ACCELERATION_MODEL_VELOCITY_SWITCH_FACTOR
 100 			when particle's velocity is below the factor times vAlfven, an interaction with two wave branches independently is considered 
@@ -413,6 +413,12 @@ reflect			[reflect,uniform,off]
 !4                       spectral index
 !3.4E-4                  Injection Efficiency Constant
 
+#SEP_INJECTION_TYPE_FL_TENISHEV_2005AIAA
+3.4E-4			Injection Efficiency Constant 
+3.0			MaxLimitCompressionRatio
+
+
+
 !#SEP_INJECTION_TYPE_FL_CONST_ENERGY
 !100.0                  particles are ijected in the simulation with const enrergy [MeV] and specified value of mu
 !0.5
@@ -424,6 +430,8 @@ reflect			[reflect,uniform,off]
 !0.5
 !3.4E-4
 
+#SEP_SAMPLING_EMAX
+300 			[MeV] Max sampling energy
 
 
 #SEP_SAMPLING_LOCATION_FL
