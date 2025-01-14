@@ -380,16 +380,23 @@ Jokopii                      ModelType  [none,Jokopii,Borovikov]
 ON			[ON,OFF] 
 0.05
 
+#SEP_MEAN_FREE_PATH_MODEL
+Tenishev2005AIAA	Tenishev2005AIAA,QLT,QLT1,Chen2024AA
+
+
 #SEP_PITCH_ANGLE_DIFERENTIAL 
 numerical		[numerical,analytical]
+
+#SEP_BACKGOUND_IMF
+SWMF			[SWMF,ParkerSpiral]
 
 #SEP_PITCH_ANGLE_JOKOPII_DIFFUSION 
 1.0E-10 		k_ref_min
 1.0E-7			k_ref_max
 1.0			the location for which k_ref_min and k_ref_max are defined in AU
 fraction		[fraction,awsom] the source of the dB/B
-0.05			fraction of magnetic field that contributes to diffusion 
-2			power index
+0.02 			fraction of magnetic field that contributes to diffusion 
+0.9			power index
 
 #SEP_INJECTION_FL 
 30                    NumberParticles per iteration
