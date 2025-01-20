@@ -72,12 +72,13 @@ F			UseB0MomentumFlux
 #POYNTINGFLUX
 1.1e6			PoyntingFluxPerBSi [J/m^2/s/T]
 
+
 #CORONALHEATING
-turbulentcascade		TypeCoronalHeating
-T			UseWaveReflection
-1.5e5			LperpTimesSqrtBSi
-0.0			rMinWaveReflection
-F			UseSurfaceWaveRefl
+turbulentcascade                TypeCoronalHeating
+1.5e5                   LperpTimesSqrtBSi
+0.0                     rMinWaveReflection
+F                       UseReynoldsDecomposition
+
 
 #HEATPARTITIONING
 stochasticheating		TypeHeatPartitioning
@@ -272,11 +273,11 @@ T			UseAccurateReschange
 +init			StringSwitch
 
 #CORONALHEATING
-turbulentcascade		TypeCoronalHeating
-T			UseWaveReflection
-1.5e5			LperpTimesSqrtBSi
-0.0			rMinWaveReflection
-F			UseSurfaceWaveRefl
+turbulentcascade                TypeCoronalHeating
+1.5e5                   LperpTimesSqrtBSi
+0.0                     rMinWaveReflection
+F                       UseReynoldsDecomposition
+
 
 #RESISTIVITY
 T			UseResistivity
