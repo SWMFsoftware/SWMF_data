@@ -280,7 +280,7 @@ F                       UseReynoldsDecomposition
 
 
 #RESISTIVITY
-T			UseResistivity
+F			UseResistivity
 user			TypeResistivity
 0.0			Eta0Si     ! not used
 
