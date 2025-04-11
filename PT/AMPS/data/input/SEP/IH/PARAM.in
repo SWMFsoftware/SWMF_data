@@ -351,11 +351,14 @@ T                       useFixedDt
 1.0                     fixedDt
 
 #COUPLE_DIVU
-F
+T
 
+#CALCULATE_DIVU
+T			T,F
+coupling		coupling,output -- events when the DivU is recalculated
 
 #COUPLE_DIVUDX
-T
+F
 
 #SHOCK_DIVUDX_THREHOLD
 0.002
