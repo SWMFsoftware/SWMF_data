@@ -367,6 +367,22 @@ F
 #SAMPLING_LENGTH
 20  
 
+#IMF_MODE
+background			background,parker
+
+#SPHERICAL_SHOCK_SW_DENSITY_MODE
+analytic 		analytic,swmf
+
+
+#SEP_TRAJECTORY_INTEGRATION_METHOD
+RK4			RK1,RK2,RK4
+
+#SEP_ADIABATIC_COOLING
+T			T,F
+
+#SEP_PERPENDICULAR_DIFFUSION"
+T			T,F
+
 #END_COMP PT -----------------------------------------------------------------
 
 
