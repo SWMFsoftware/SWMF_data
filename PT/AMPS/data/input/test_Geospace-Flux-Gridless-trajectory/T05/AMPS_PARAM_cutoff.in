@@ -23,17 +23,6 @@ DIRMAP_LAT_RES         30                ! deg — latitude resolution
 
 
 
-! ── Density & spectrum sampling (Step 2, Section D) ───────────────
-! Backward-trace energy grid + boundary spectrum folding.
-#DENSITY_SPECTRUM
-DS_EMIN                1.0          ! MeV/n
-DS_EMAX                1000.0       ! MeV/n
-DS_NINTERVALS          50               ! energy intervals
-DS_MAX_PARTICLES       500              ! per observation point
-DS_MAX_TRAJ_TIME       600               ! sec — max trajectory integration time
-DS_ENERGY_SPACING      LOG           ! LOG or LINEAR
-
-
 #PARTICLE_SPECIES
 SPECIES                PROTON
 CHARGE                 1               ! elementary charge

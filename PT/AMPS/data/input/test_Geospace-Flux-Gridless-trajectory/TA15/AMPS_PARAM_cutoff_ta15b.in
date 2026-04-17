@@ -15,7 +15,7 @@ FIELD_EVAL_METHOD      GRIDLESS
 ! Energy range and particle budget for backward-tracing cutoff search.
 #CUTOFF_RIGIDITY
 CUTOFF_EMIN            1.0          ! MeV/n
-CUTOFF_EMAX            1000.0       ! MeV/n
+CUTOFF_EMAX            20000.0       ! MeV/n
 CUTOFF_MAX_PARTICLES   500              ! per injection point
 CUTOFF_NENERGY         50               ! log-spaced energy bins
 CUTOFF_SAMPLING        VERTICAL           ! VERTICAL or ISOTROPIC
