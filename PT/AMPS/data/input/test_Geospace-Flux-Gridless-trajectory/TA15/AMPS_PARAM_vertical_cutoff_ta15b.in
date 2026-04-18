@@ -18,7 +18,7 @@ CUTOFF_EMIN            1.0          ! MeV/n
 CUTOFF_EMAX            20000.0       ! MeV/n
 CUTOFF_MAX_PARTICLES   500              ! per injection point
 CUTOFF_NENERGY         50               ! log-spaced energy bins
-CUTOFF_SAMPLING        ISOTROPIC           ! VERTICAL or ISOTROPIC
+CUTOFF_SAMPLING        VERTICAL           ! VERTICAL or ISOTROPIC
 DIRECTIONAL_MAP        T                 ! compute directional Rc sky-map
 DIRMAP_LON_RES         10                ! deg — longitude resolution
 DIRMAP_LAT_RES         10                ! deg — latitude resolution
@@ -31,8 +31,8 @@ CHARGE                 1               ! elementary charge
 MASS_AMU               1.0073           ! atomic mass units
 
 #BACKGROUND_FIELD
-FIELD_MODEL            T05
-DRIVER_FILE            ts05_driving_2017-09-07T000000Z.txt  
+FIELD_MODEL            TA15B
+DRIVER_FILE            ta15b_driving_2017-09-07T000000Z.txt  ! time-dependent driving parameters (from Step 6)
 
 #DOMAIN_BOUNDARY
 BOUNDARY_TYPE          BOX  ! rectangular box in GSM

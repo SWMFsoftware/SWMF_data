@@ -18,7 +18,7 @@ CUTOFF_EMIN            1.0          ! MeV/n
 CUTOFF_EMAX            20000.0       ! MeV/n
 CUTOFF_MAX_PARTICLES   500              ! per injection point
 CUTOFF_NENERGY         50               ! log-spaced energy bins
-CUTOFF_SAMPLING        VERTICAL           ! VERTICAL or ISOTROPIC
+CUTOFF_SAMPLING        ISOTROPIC           ! VERTICAL or ISOTROPIC
 DIRECTIONAL_MAP        T                 ! compute directional Rc sky-map
 DIRMAP_LON_RES         10                ! deg — longitude resolution
 DIRMAP_LAT_RES         10                ! deg — latitude resolution
@@ -32,14 +32,7 @@ MASS_AMU               1.0073           ! atomic mass units
 
 #BACKGROUND_FIELD
 FIELD_MODEL            T01
-DST                    -142.0         ! nT
-PDYN                   3.50          ! nPa
-IMF_BZ                 -18.50         ! nT GSM
-IMF_BY                 3.20          ! nT
-TILT                   0.0          ! deg dipole tilt
-G1                     0.0          ! IMF-history index
-G2                     0.0          ! SW/IMF coupling index
-EPOCH                  2017-09-10T16:00  ! UTC snapshot
+DRIVER_FILE            t01_driving_2017-09-07T000000Z.txt  
 
 #DOMAIN_BOUNDARY
 BOUNDARY_TYPE          BOX  ! rectangular box in GSM

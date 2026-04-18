@@ -18,7 +18,7 @@ CUTOFF_EMIN            1.0          ! MeV/n
 CUTOFF_EMAX            20000.0       ! MeV/n
 CUTOFF_MAX_PARTICLES   500              ! per injection point
 CUTOFF_NENERGY         50               ! log-spaced energy bins
-CUTOFF_SAMPLING        ISOTROPIC           ! VERTICAL or ISOTROPIC
+CUTOFF_SAMPLING        VERTICAL           ! VERTICAL or ISOTROPIC
 DIRECTIONAL_MAP        T                 ! compute directional Rc sky-map
 DIRMAP_LON_RES         10                ! deg — longitude resolution
 DIRMAP_LAT_RES         10                ! deg — latitude resolution
