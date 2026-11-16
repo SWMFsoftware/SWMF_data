@@ -1,0 +1,5 @@
+Test 2: theoretical H2O lifetime [s]: 45388.9
+Test 2: reaction yield of the H2O photolysis (spec yield):  1 0.153868  2 0.0681787
+Test 2: loss of H2O: |z|<4: PASS
+Test 2: production of O: |z|<4: PASS
+Test 2: production of H2: |z|<4: PASS

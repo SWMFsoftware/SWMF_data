@@ -45,8 +45,8 @@ DOMAIN_Z_MIN           -30.0        ! RE south
 R_INNER                1.0           ! RE inner loss sphere
 
 #ELECTRIC_FIELD
-COROTATION_E           NO      ! corotation = −(ω×r)×B
-CONV_E_MODEL           NONE  ! gridless mode — no convection E
+!COROTATION_E           NO      ! corotation = −(ω×r)×B
+!CONV_E_MODEL           NONE  ! gridless mode — no convection E
 
 
 

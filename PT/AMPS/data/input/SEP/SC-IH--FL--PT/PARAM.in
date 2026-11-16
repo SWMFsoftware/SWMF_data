@@ -277,16 +277,6 @@ turbulentcascade		TypeCoronalHeating
 0.0			rMinWaveReflection
 F			UseSurfaceWaveRefl
 
-#RESISTIVITY
-T			UseResistivity
-user			TypeResistivity
-0.0			Eta0Si     ! not used
-
-#RESISTIVITYOPTIONS
-F			UseResistiveFlux
-F			UseJouleHeating
-T			UseHeatExchange
-
 #HEATFLUXCOLLISIONLESS
 T			UseHeatFluxCollisionless
 1.05			CollisionlessAlpha
@@ -360,8 +350,8 @@ Parker
 #SEP_SCATTER_ONLY_INCOMING_WAVES
 T			[T,F] (if vParallel>0, then scatter only of the wave movinf with -vAlfven, or if vParallel<0, them scatter on the wave moveing with +vAlfven)
 
-#SEP_MOVER1D  
-Parker_MeanFreePath	[Parker_MeanFreePath,HE_2019_AJL,Kartavykh_2016_AJ,BOROVIKOV_2019_ARXIV,Droge_2009_AJ,MeanFreePathScattering,Tenishev_2005_FL]
+#SEP_MOVER1D
+fte-mfp			[parker,fte-dmumu,fte-mfp] (srcSEP production movers; fte-mfp replaces Parker_MeanFreePath)
 
 #SEP_MAX_TURBUENCE_LEVEL
 0.1			[max value of (db/B)^2 
@@ -387,8 +377,8 @@ Tenishev2005AIAA	Tenishev2005AIAA,QLT,QLT1,Chen2024AA
 #SEP_PITCH_ANGLE_DIFERENTIAL 
 numerical		[numerical,analytical]
 
-#SEP_BACKGOUND_IMF
-SWMF			[SWMF,ParkerSpiral]
+#IMF_MODE
+background		[background,parker]
 
 #SEP_PITCH_ANGLE_JOKOPII_DIFFUSION 
 1.0E-10 		k_ref_min
@@ -494,7 +484,7 @@ F			DoAmr
 
 #STOP
 -1			MaxIter
-800			TimeMax
+60			TimeMax		(was 800: ~6 h on passion; 60 s keeps the nightly run stage within ~1 h)
 
 End session: 2
 #END ##########################################################################
