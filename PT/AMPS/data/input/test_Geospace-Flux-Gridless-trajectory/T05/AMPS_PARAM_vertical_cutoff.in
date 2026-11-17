@@ -19,7 +19,8 @@ CUTOFF_EMAX            20000.0       ! MeV/n
 CUTOFF_MAX_PARTICLES   500              ! per injection point
 CUTOFF_NENERGY         50               ! log-spaced energy bins
 CUTOFF_SAMPLING        VERTICAL           ! VERTICAL or ISOTROPIC
-DIRECTIONAL_MAP        T                 ! compute directional Rc sky-map
+DIRECTIONAL_MAP        F                 ! compute directional Rc sky-map
+! (off: the test compares only Rc, which does not depend on it; the map traced 684 more directions per point)
 DIRMAP_LON_RES         10                ! deg — longitude resolution
 DIRMAP_LAT_RES         10                ! deg — latitude resolution
 
@@ -86,7 +87,10 @@ N_PARTICLES            10000              ! test particles per injection
 MAX_BOUNCE             500                ! max mirror reflections
 DT_TRACE               1.0               ! s integration step
 MAX_TRACE_TIME         600               ! sec — max trajectory integration time
-MAX_TRACE_DISTANCE     40.0         ! Re — max cumulative trajectory path length
+MAX_TRACE_DISTANCE     1000.0       ! Re — max cumulative trajectory path length
+! 1000 Re, not 40: a 7-20 GV proton escaping from 1.4 Re to the +-30 Re box travels 33 to over 40 Re.
+! With 40 Re such paths were cut and counted as not allowed (T96/T01 vertical Rc ~20 GV at the 9000 km
+! point, T05 7.9 GV at point 0 instead of 3.2).  Vertical Rc is the same for 300-10000 Re.
 PITCH_ISOTROPIC        T                 ! isotropic injection
 
 #END

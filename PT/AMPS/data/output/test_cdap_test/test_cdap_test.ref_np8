@@ -1,0 +1,4 @@
+total energy conserved within 3 percent between the first and the last time step: 1
+E-field GMRES solves: 500
+E-field GMRES solves that did not converge: 0
+NaN in the output of the run: 0

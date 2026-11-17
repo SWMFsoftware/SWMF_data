@@ -1,0 +1,21 @@
+# The drag-coefficient test (srcOrbiter/main.cpp, DragCoefficientTest): input and result of one case
+input=../sphere-drag-coefficient.in
+case=quasi-specular-cll
+upstream_velocity_m_s=-3.000000000e+03 0.000000000e+00 0.000000000e+00
+upstream_temperature_k=2.930000000e+02
+upstream_number_density_m-3[H2O]=1.500000000e+21
+mass_kg[H2O]=2.988970320e-26
+characteristic_speed_m_s=5.000000000e+03
+iterations=100
+boltzmann_constant=1.380650300e-23
+model[H2O]=quasi_specular_cll
+wall_temperature_k=3.000000000e+02
+species.H2O.normal_energy_accommodation=5.000000000e-02
+species.H2O.tangential_momentum_accommodation=1.500000000e-01
+# species H2O: model quasi_specular_cll, alpha_n=0.05, sigma_t=0.15, wall temperature=300 K
+mpi_processes=8
+projection_area_m2=2.371233849e+00
+sample_length=100
+hits=33615
+Cd=2.202908509e+00
+sigma_Cd=1.353870180e-02
