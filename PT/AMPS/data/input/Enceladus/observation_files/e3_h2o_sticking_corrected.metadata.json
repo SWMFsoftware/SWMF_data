@@ -1,0 +1,84 @@
+{
+  "calibration_reference": "Teolis et al. (2010), doi:10.1029/2009JA015192",
+  "data_kind": "calibrated_observation",
+  "density_units": "m^-3",
+  "digitization": {
+    "absolute_normalization_source": "Teolis et al. (2010), reported peak density",
+    "axis_pixels": {
+      "published_peak_m3": 76000000000000.0,
+      "ticks": [
+        [
+          1404,
+          14
+        ],
+        [
+          1493.5,
+          13
+        ],
+        [
+          1583,
+          12
+        ],
+        [
+          1672,
+          11
+        ],
+        [
+          1761.5,
+          10
+        ],
+        [
+          1850.5,
+          9
+        ]
+      ],
+      "x_left": 259,
+      "x_right": 843
+    },
+    "independent_fractional_sigma": 0.05156960566725334,
+    "normalization_factor": 1.4605070344408244,
+    "published_peak_m3": 76000000000000.0,
+    "render": "pdftoppm page 7, 200 dpi",
+    "shape_source": "Tenishev et al. (2010), Figure 5 red Sticking Model trace"
+  },
+  "fit_role": "absolute_density_calibration",
+  "flyby": "E3",
+  "frame": "IAU_ENCELADUS",
+  "observable": "number_density",
+  "peak_density_m3": 76000000000000.0,
+  "position_units": "m",
+  "release_observable": "local_number_density",
+  "rows": 79,
+  "selection_reference": "outbound 10 to 400 s from closest approach, 5 s digitization grid",
+  "source_path": "/data/vtenishe/cassini_validation_data/data/derived/inms_sticking_corrected/e3_teolis2010_digitized.csv",
+  "source_pdf": {
+    "path": "/home/vtenishe/Downloads/Tenishev-2010-JGR.pdf",
+    "sha256": "3ed89bdd1a2027a64f6040f4df974d70beb098e562b3fc5c8ae22b0cc18f39b9"
+  },
+  "source_sha256": "5233ac2f3bf6677839089fae2ac03edf5a9cf95bb34407192c848051f719fd05",
+  "species": "H2O",
+  "sticking_treatment": "Teolis et al. (2010) sticking-corrected profile",
+  "systematic_uncertainty_not_in_sigma": {
+    "fraction": 0.23,
+    "reference": "Teolis et al. (2015), doi:10.1007/s11214-014-0133-8",
+    "scope": "common density scale"
+  },
+  "time_range_ca_s": [
+    10.0,
+    400.0
+  ],
+  "time_sampling": "instantaneous",
+  "trajectory": {
+    "columns": [
+      "time_ca",
+      "sc_pos_t_x",
+      "sc_pos_t_y",
+      "sc_pos_t_z"
+    ],
+    "interpolation": "linear",
+    "root": "/data/vtenishe/cassini_validation_data/data/raw/inms",
+    "source": "PDS CO-S-INMS-3-L1A-U-V2.0"
+  },
+  "uncertainty_model": "independent_gaussian",
+  "uncertainty_units": "m^-3"
+}

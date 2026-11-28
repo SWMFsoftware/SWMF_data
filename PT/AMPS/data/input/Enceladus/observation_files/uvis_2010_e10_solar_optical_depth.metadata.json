@@ -1,0 +1,26 @@
+{
+  "column_warning": "normalized_column_shape is dimensionless; use the separate published column constraint rather than treating optical depth as a calibrated column",
+  "date": "2010-05-18",
+  "event_id": "uvis_2010_e10_solar",
+  "geometry_conversion": {
+    "enceladus_radius_m": 252100.0,
+    "frame_interpretation": "reproduces Enceladus_OSproject3.m; verify longitude convention with SPICE before final inference",
+    "origin": "Enceladus center",
+    "phi_rad": "pi-deg2rad(source_longitude)",
+    "theta_rad": "deg2rad(90-latitude)"
+  },
+  "observable": "broadband count attenuation and optical-depth proxy",
+  "optical_depth_definition": "max(-ln(observed_counts/reference_counts), 0)",
+  "reference_counts": 16816.0,
+  "rows": 1133,
+  "source_columns": [
+    "time",
+    "tangent latitude",
+    "source longitude",
+    "tangent altitude m",
+    "counts"
+  ],
+  "source_path": "data/raw/external/swri_inms_modeling/extracted/UVIS_2010solarSPHERE",
+  "source_sha256": "5b539a180b0b66dd24aa73c937458a06a980ada41bf4197ea7929aaf9a656334",
+  "uncertainty": "Poisson sigma for observed counts only; reference and calibration systematics are separate"
+}

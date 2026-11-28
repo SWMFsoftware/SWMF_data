@@ -1,0 +1,26 @@
+{
+  "event_id": "uvis_2010_e10_solar",
+  "observable": "finite-observer occultation ray geometry",
+  "rows": 1133,
+  "time_system": "NAIF ephemeris time seconds past J2000",
+  "spacecraft_state": {
+    "target": "CASSINI",
+    "observer": "ENCELADUS",
+    "frame": "IAU_ENCELADUS",
+    "aberration_correction": "NONE"
+  },
+  "ray_direction": {
+    "target": "SUN",
+    "observer": "CASSINI",
+    "frame": "IAU_ENCELADUS",
+    "aberration_correction": "LT+S",
+    "table_frame_conversion": "negate IAU_ENCELADUS x and y, matching the documented SwRI trajectory conversion"
+  },
+  "observer_coordinate_definition": "dot(Cassini position relative to Enceladus, unit Cassini-to-Sun direction); negative means the tangent point is ahead of the observer",
+  "input_profile": "uvis_2010_e10_solar_optical_depth.csv",
+  "input_profile_sha256": "fb556b2f4b4ee9913be4e24cada72c4d05c61ef80909177a3ba8eba54f56c174",
+  "metakernel": "/data/vtenishe/cassini_validation_data/data/raw/spice/metakernels/cas_uvis_2010_e10_solar.tm",
+  "metakernel_sha256": "b26b0fa049aebaef0b64e959c941699ca79e799a204785d3d93cbcd8f0ab17f6",
+  "generator": "/home/vtenishe/Mars2/AMPS/srcEnceladus/standalone/tools/spice_observer_ranges.cpp",
+  "generator_sha256": "9fea03a86fc163b8dd1ab4510659741fb7e77a1171176bd1f8911d80951d335e"
+}

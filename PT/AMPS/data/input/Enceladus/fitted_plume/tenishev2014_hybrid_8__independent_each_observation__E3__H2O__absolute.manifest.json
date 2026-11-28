@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "source_case": "tenishev2014_hybrid_8",
+  "distribution_name": "tenishev2014_hybrid_8__independent_each_observation__E3__H2O__absolute",
+  "mode": "absolute",
+  "species": {
+    "H2O": {
+      "jet:I_baghdad": 1.2133038257403538e-12,
+      "jet:II_damascus": 0.9446707091708749,
+      "jet:III_damascus": 0.0032453805637654826,
+      "jet:IV_alexandria": 1.567905612631966e+26,
+      "jet:V_cairo": 2.108521501667153e-07,
+      "jet:VI_baghdad": 0.0012387301962500123,
+      "jet:VII_baghdad": 1.832761033081202e+28,
+      "jet:VIII_cairo": 3.07498907438761e-06,
+      "stripe:alexandria": 9.654141756823922e+26,
+      "stripe:baghdad": 2.390255811644355e+27,
+      "stripe:cairo": 2.448798511774778e-08,
+      "stripe:damascus": 22.012246517590285,
+      "stripe:baghdad_extra": 8.803618713812087e+27,
+      "stripe:cairo_extra": 8.579365652135825e-08,
+      "stripe:damascus_extra": 7.811282101696058e+26
+    }
+  },
+  "fit_provenance": {
+    "study_result": "/data/vtenishe/cassini_validation_data/studies/fitting_compain_111126/h2o/tenishev2014_hybrid_8/study_results.json",
+    "study_sha256": "941df8b681e98dfbea8c9b5f3ddc3e99a370b011010d57ad8ee01f695fcc74db",
+    "backgrounds_excluded": true,
+    "limitations": [
+      "E3/E5 are digitized sticking-corrected profiles, not independent raw-count inversions.",
+      "UVIS resolved profiles constrain shape in optical-depth space; one published peak/representative column supplies each absolute scale.",
+      "The INMS-, UVIS-, and all-data combined fits minimize a sum of per-dataset mean weighted-square residuals; they are balanced diagnostics, not formal joint likelihoods.",
+      "Shared-shape rate strategies normalize only jet/stripe coefficients; each observation refits one total source coefficient plus its own nonnegative background nuisance amplitudes.",
+      "Individual source rates are not identifiable when the scaled design matrix is ill-conditioned.",
+      "The model is steady, collisionless, gravity-free, and omits time-dependent inlet and UVIS spectral-response physics."
+    ],
+    "strategy": "independent_each_observation",
+    "target": "E3",
+    "interpretation": "H2O",
+    "source_total_includes_background": false,
+    "geometry_matches_fit": true,
+    "conditional_shape_only": false
+  }
+}

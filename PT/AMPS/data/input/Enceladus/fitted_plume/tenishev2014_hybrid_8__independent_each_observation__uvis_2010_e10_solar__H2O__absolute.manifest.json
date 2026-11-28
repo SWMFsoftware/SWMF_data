@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "source_case": "tenishev2014_hybrid_8",
+  "distribution_name": "tenishev2014_hybrid_8__independent_each_observation__uvis_2010_e10_solar__H2O__absolute",
+  "mode": "absolute",
+  "species": {
+    "H2O": {
+      "jet:I_baghdad": 0.0,
+      "jet:II_damascus": 0.0,
+      "jet:III_damascus": 0.0,
+      "jet:IV_alexandria": 4.140853219356554e+26,
+      "jet:V_cairo": 4.630368309621796e+26,
+      "jet:VI_baghdad": 7.402144922756788e+25,
+      "jet:VII_baghdad": 4.025226528637996e+25,
+      "jet:VIII_cairo": 5.445167362345748e+26,
+      "stripe:alexandria": 0.0,
+      "stripe:baghdad": 0.0,
+      "stripe:cairo": 1.487528645287712e+27,
+      "stripe:damascus": 1.5526402571890243e+27,
+      "stripe:baghdad_extra": 0.0,
+      "stripe:cairo_extra": 0.0,
+      "stripe:damascus_extra": 0.0
+    }
+  },
+  "fit_provenance": {
+    "study_result": "/data/vtenishe/cassini_validation_data/studies/fitting_compain_111126/h2o/tenishev2014_hybrid_8/study_results.json",
+    "study_sha256": "941df8b681e98dfbea8c9b5f3ddc3e99a370b011010d57ad8ee01f695fcc74db",
+    "backgrounds_excluded": true,
+    "limitations": [
+      "E3/E5 are digitized sticking-corrected profiles, not independent raw-count inversions.",
+      "UVIS resolved profiles constrain shape in optical-depth space; one published peak/representative column supplies each absolute scale.",
+      "The INMS-, UVIS-, and all-data combined fits minimize a sum of per-dataset mean weighted-square residuals; they are balanced diagnostics, not formal joint likelihoods.",
+      "Shared-shape rate strategies normalize only jet/stripe coefficients; each observation refits one total source coefficient plus its own nonnegative background nuisance amplitudes.",
+      "Individual source rates are not identifiable when the scaled design matrix is ill-conditioned.",
+      "The model is steady, collisionless, gravity-free, and omits time-dependent inlet and UVIS spectral-response physics."
+    ],
+    "strategy": "independent_each_observation",
+    "target": "uvis_2010_e10_solar",
+    "interpretation": "H2O",
+    "source_total_includes_background": false,
+    "geometry_matches_fit": true,
+    "conditional_shape_only": false
+  }
+}
